@@ -1,6 +1,6 @@
 class Meal 
   
-   attr_accessor :name, :meal_id, :ingredient
+   attr_accessor :name, :meal_id, :protien
    
    @@all = []
    
@@ -12,6 +12,10 @@ class Meal
    
    def self.all
      @@all
+   end
+   
+   def self.find_by_protien(protien)
+     @@all.select {|m| mm.protien == protien}
    end
   
   

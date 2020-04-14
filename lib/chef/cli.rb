@@ -10,4 +10,12 @@ class Cli
     binding.pry
   end
   
+  def print_meals(meals)
+    puts"Meals made with #{@protien}:"
+    puts " "
+    meals.each.with_index(1) do |meal, i|
+      puts "#{i}. #{meal.name}"
+    end
+  end
+  
 end
