@@ -4,4 +4,4 @@ require 'json'
 
 require_relative './chef/api'
 require_relative './chef/cli'
-require_relative './chef/recipe'
+require_relative './chef/meal'

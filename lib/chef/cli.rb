@@ -6,6 +6,8 @@ class Cli
     puts
     @protien = gets.strip.downcase
     Api.get_meals(@protien)
+    print_meals(Meal.all)
+    binding.pry
   end
   
 end
