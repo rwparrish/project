@@ -12,6 +12,6 @@ class Api
     response = HTTParty.get(url)
     meal_details = response["meals"]
     meal.instructions = meal_details[0]["strInstructions"]
-    binding.pry
   end
+  
 end

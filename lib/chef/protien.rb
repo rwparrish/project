@@ -1,0 +1,3 @@
+class Protien
+  
+end

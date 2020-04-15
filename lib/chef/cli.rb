@@ -43,6 +43,7 @@ class Cli
   end
   
   def prompt
+    puts " "
     puts "Pick a number to see the recipe, type 'list' to see the list again, 'protien' to choose another protien, or 'exit' to exit."
     puts " "
   end

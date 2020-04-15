@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/environment'
 
+require_relative '../lib/environment'
+ 
+# instanciate the Cli method and call the run method on that instance  
 Cli.new.run
