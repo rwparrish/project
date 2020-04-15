@@ -18,8 +18,7 @@ class Meal
    end
    
    def self.find_by_protien(protien)
-    
-     @@all.select {|m| m.protien == protien}
+    @@all.select {|m| m.protien == protien}
    end
   
   
