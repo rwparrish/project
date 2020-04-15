@@ -1,6 +1,6 @@
 class Meal 
   
-   attr_accessor :name, :meal_id, :protien, :instructions
+   attr_accessor :name, :meal_id, :protien, :instructions, :ingredients, :measures 
    
    @@all = []
    
@@ -8,6 +8,8 @@ class Meal
      @name = name
      @meal_id = meal_id
      @protien = protien
+     @ingredients = [] 
+     @measures = []
      @@all << self
    end
    
