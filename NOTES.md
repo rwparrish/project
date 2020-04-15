@@ -1,6 +1,6 @@
-list_protiens - present a list of protiens for the user to select from
+list_proteins - present a list of proteins for the user to select from
 
-select_protien - user selects which protien 
+select_protein - user selects which protein 
 
 
 

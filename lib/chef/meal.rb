@@ -1,13 +1,13 @@
 class Meal 
   
-   attr_accessor :name, :meal_id, :protien, :instructions, :ingredients, :measures 
+   attr_accessor :name, :meal_id, :protein, :instructions, :ingredients, :measures 
    
    @@all = []
    
-   def initialize(name:, meal_id:, protien:)
+   def initialize(name:, meal_id:, protein:)
      @name = name
      @meal_id = meal_id
-     @protien = protien
+     @protein = protein
      @ingredients = [] 
      @measures = []
      @@all << self
@@ -17,8 +17,8 @@ class Meal
      @@all
    end
    
-   def self.find_by_protien(protien)
-    @@all.select {|m| m.protien == protien}
+   def self.find_by_protein(protein)
+    @@all.select {|m| m.protein == protein}
    end
   
   
