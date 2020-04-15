@@ -26,7 +26,7 @@ class Cli
       input = gets.strip.downcase
     end
     puts " "
-    puts "Goodbye!"
+    puts "Bon appetit!"
   end
   
   def print_meals(meals)
@@ -38,6 +38,8 @@ class Cli
   end
   
   def print_meal(meal)
+    puts meal.name
+    puts meal.instructions
   end
   
   def prompt
