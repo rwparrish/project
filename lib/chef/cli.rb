@@ -7,13 +7,13 @@ class Cli
     input = gets.strip.downcase
     while input != 'exit'
       if input == 'list'
-        print_meals(Meal.find_by_protein(@protein))
-      elsif input.to_i > 0 && input.to_i <= Meal.find_by_protein(@protein).length 
-        meal = Meal.find_by_protein(@protein)[input.to_i - 1]
+        print_meals(Protein.find_by_protein(@protein).meals)
+      elsif input.to_i > 0 && input.to_i <= Protein.find_by_protein(@protein).meals.length 
+        meal = Protein.find_by_protein(@protein).meals[input.to_i - 1]
         Api.get_meal_details(meal) if !meal.instructions
         print_meal(meal)
       elsif input == "protein"
-      
+        prompt_protein
       else 
         puts "Does not compute - please try again!"
           puts " "
