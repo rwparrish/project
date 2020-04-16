@@ -17,9 +17,9 @@ class Meal
      @@all
    end
    
-   def self.find_by_protein(protein)
-    @@all.select {|m| m.protein == protein}
-   end
+  # def self.find_by_protein(protein)
+  #   @@all.select {|m| m.protein == protein}
+  # end
   
   
 end

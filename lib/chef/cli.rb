@@ -2,12 +2,8 @@ class Cli
   
   def run 
     puts "Welcome to cooking with protein!"
-    puts " "
-    puts "Please enter a protein you wish to cook with. For example: chicken, beef, salmon, pork, etc."
-    @protein = gets.strip.downcase
-    Api.get_meals(@protein)
-    print_meals(Meal.all)
-    prompt
+    prompt_protein
+    prompt_num
     input = gets.strip.downcase
     while input != 'exit'
       if input == 'list'
@@ -42,10 +38,18 @@ class Cli
     puts meal.instructions
   end
   
-  def prompt
+  def prompt_num
     puts " "
     puts "Pick a number to see the recipe, type 'list' to see the list again, type 'protein' to choose another protein, or 'exit' to exit."
     puts " "
+  end
+  
+  def prompt_protein
+    puts " "
+    puts "Please enter a protein you wish to cook with. For example: chicken, beef, salmon, pork, etc."
+    @protein = gets.strip.downcase
+    Api.get_meals(@protein)
+    print_meals(Meal.all)
   end
   
 end
