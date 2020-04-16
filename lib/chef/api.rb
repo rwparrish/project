@@ -6,7 +6,7 @@ class Api
     meals = response["meals"]
     new_protein = Protein.new(protein)
     meals.each do |m|
-      new_meal = Meal.new(name: m["strMeal"], meal_id: m["idMeal"], protein: protein)}
+      new_meal = Meal.new(name: m["strMeal"], meal_id: m["idMeal"], protein: protein)
       new_protein.meals << new_meal
     end
     binding.pry
