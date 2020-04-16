@@ -16,8 +16,12 @@ class Api
   def self.get_meal_details(meal)
     url = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=#{meal.meal_id}"
     response = HTTParty.get(url)
-    meal_details = response["meals"]
-    meal.instructions = meal_details[0]["strInstructions"]
+    meal_details = response["meals"][0]
+    meal.instructions = meal_details["strInstructions"]
+    meal_details.keys.each do |k| 
+      meal.ingredients << meal_details[k] if (k.include? "ingredient") && meal_details[k]
+      meal.measures << meal_details[k] if (k.include? "Measure") && meal_details[k]
+    end
   end
   
 end
