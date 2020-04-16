@@ -46,10 +46,13 @@ class Cli
   end
   
   def prompt_protein
-    puts " "
-    puts "Please enter a protein you wish to cook with. For example: chicken, beef, salmon, pork, etc."
-    @protein = gets.strip.downcase
-    Api.get_meals(@protein) if !Protein.find_by_protein(@protein)
+    @protein = " "
+    while !Protein.find_by_protein(@protein) do
+      puts " "
+      puts "Please enter a protein you wish to cook with. For example: chicken, beef, salmon, pork, etc."
+      @protein = gets.strip.downcase
+      Api.get_meals(@protein) if !Protein.find_by_protein(@protein)
+    end
     print_meals(Protein.find_by_protein(@protein).meals) if Protein.find_by_protein(@protein)
   end
   
