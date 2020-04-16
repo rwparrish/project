@@ -4,12 +4,13 @@ class Api
     url = "https://www.themealdb.com/api/json/v1/1/filter.php?i=#{protein}"
     response = HTTParty.get(url)
     meals = response["meals"]
-    new_protein = Protein.new(protein)
-    meals.each do |m|
-      new_meal = Meal.new(name: m["strMeal"], meal_id: m["idMeal"], protein: protein)
-      new_protein.meals << new_meal
+    if meals
+      new_protein = Protein.new(protein)
+      meals.each do |m|
+        new_meal = Meal.new(name: m["strMeal"], meal_id: m["idMeal"], protein: protein)
+        new_protein.meals << new_meal
+      end
     end
-    binding.pry
   end
   
   def self.get_meal_details(meal)

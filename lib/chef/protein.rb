@@ -18,7 +18,7 @@ class Protein
   #before with the find_meal_by_protein the program would serach through all meals to find matches - now the program can find meals that belong to a protein
   
   def self.find_by_protein(protein)
-    @@all.find { |p| p.name == name}
+    @@all.find { |p| p.name == protein}
   end
   
 end

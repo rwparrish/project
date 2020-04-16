@@ -6,6 +6,7 @@ class Cli
     prompt_num
     input = gets.strip.downcase
     while input != 'exit'
+    # binding.pry
       if input == 'list'
         print_meals(Protein.find_by_protein(@protein).meals)
       elsif input.to_i > 0 && input.to_i <= Protein.find_by_protein(@protein).meals.length 
@@ -18,7 +19,7 @@ class Cli
         puts "Does not compute - please try again!"
           puts " "
       end
-      prompt 
+      prompt_num
       input = gets.strip.downcase
     end
     puts " "
@@ -48,8 +49,8 @@ class Cli
     puts " "
     puts "Please enter a protein you wish to cook with. For example: chicken, beef, salmon, pork, etc."
     @protein = gets.strip.downcase
-    Api.get_meals(@protein)
-    print_meals(Meal.all)
+    Api.get_meals(@protein) if !Protein.find_by_protein(@protein)
+    print_meals(Protein.find_by_protein(@protein).meals) if Protein.find_by_protein(@protein)
   end
   
 end
